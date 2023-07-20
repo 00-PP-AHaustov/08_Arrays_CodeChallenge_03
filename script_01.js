@@ -36,6 +36,12 @@ output(
 );
 
 function getSentence(arr, op) {
+  addPunctuation(arr, op);
+  let result = buildSentence(arr);
+  return result;
+}
+
+function addPunctuation(arr, op) {
   switch (op) {
     case "Q":
       arr.push("?");
@@ -49,7 +55,6 @@ function getSentence(arr, op) {
     default:
       break;
   }
-  return buildSentence(arr);
 }
 
 function buildSentence(arr) {
